@@ -17,23 +17,17 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     @IBOutlet weak var StopButton: UIButton!
     
+    @IBOutlet weak var TaptoRecord: UILabel!
+    
     var audioRecorder:AVAudioRecorder!
     var recordedAudio:RecordedAudio!
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     override func viewWillAppear(animated: Bool) {
         
         RecordButton.enabled = true
+        
+        TaptoRecord.hidden = false
         
         StopButton.hidden = true
     }
@@ -46,15 +40,10 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         
         RecordingInProgress.hidden = false
         
+        TaptoRecord.hidden = true
+        
         //record the user's voice
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-        
-        /*
-        let currentDateTime = NSDate()
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = "ddMMyyyy-HHmmss"
-        */
-
 
         let recordingName = "my_audio.wav"
         let pathArray = [dirPath, recordingName]
@@ -76,11 +65,9 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
 
     @IBAction func StopProgress(sender: UIButton) {
         
-        //print("stopProgress")
         
         RecordingInProgress.hidden = true
         
-        //Inside func stopAudio(sender: UIButton)
         audioRecorder.stop()
         
         let audioSession = AVAudioSession.sharedInstance()
@@ -91,10 +78,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
         
         if(flag){
-            recordedAudio = RecordedAudio()
-            recordedAudio.filePathUrl = recorder.url
-            recordedAudio.title = recorder.url.lastPathComponent
-            
+            recordedAudio = RecordedAudio(filePathUrl: recorder.url, title: recorder.url.lastPathComponent)
             self.performSegueWithIdentifier("stopRecording", sender: recordedAudio)
         }else{
             print("Recording was not successful")

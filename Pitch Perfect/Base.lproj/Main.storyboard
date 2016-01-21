@@ -39,13 +39,21 @@
                                     <action selector="StopProgress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pRR-aB-LXX"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to record" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2J-Fq-M6F">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.92081151832460728" green="0.096027650812875648" blue="0.36163553422644601" alpha="0.85253213652482274" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.43427778210000001" green="0.67727353469999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="439-Au-UsL" firstAttribute="top" secondItem="KvT-vi-rgL" secondAttribute="bottom" constant="91" id="4cK-p6-UGQ"/>
+                            <constraint firstItem="aS6-qT-XLS" firstAttribute="top" secondItem="M2J-Fq-M6F" secondAttribute="bottom" constant="28" id="A53-7A-Mkh"/>
                             <constraint firstItem="aS6-qT-XLS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="GsY-Fh-wqH"/>
                             <constraint firstItem="aS6-qT-XLS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ix5-cW-hhA"/>
                             <constraint firstItem="439-Au-UsL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Td4-Qy-zUR"/>
+                            <constraint firstItem="M2J-Fq-M6F" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="msy-9d-tE1"/>
                             <constraint firstItem="KvT-vi-rgL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rKw-ny-h7D"/>
                             <constraint firstItem="KvT-vi-rgL" firstAttribute="top" secondItem="aS6-qT-XLS" secondAttribute="bottom" constant="37" id="v50-WK-vvF"/>
                         </constraints>
@@ -54,14 +62,17 @@
                                 <exclude reference="aS6-qT-XLS"/>
                                 <exclude reference="KvT-vi-rgL"/>
                                 <exclude reference="439-Au-UsL"/>
+                                <exclude reference="M2J-Fq-M6F"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="4cK-p6-UGQ"/>
-                                <exclude reference="Td4-Qy-zUR"/>
+                                <exclude reference="msy-9d-tE1"/>
+                                <exclude reference="A53-7A-Mkh"/>
                                 <exclude reference="GsY-Fh-wqH"/>
                                 <exclude reference="Ix5-cW-hhA"/>
                                 <exclude reference="rKw-ny-h7D"/>
                                 <exclude reference="v50-WK-vvF"/>
+                                <exclude reference="4cK-p6-UGQ"/>
+                                <exclude reference="Td4-Qy-zUR"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -69,14 +80,17 @@
                                 <include reference="aS6-qT-XLS"/>
                                 <include reference="KvT-vi-rgL"/>
                                 <include reference="439-Au-UsL"/>
+                                <include reference="M2J-Fq-M6F"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="4cK-p6-UGQ"/>
-                                <include reference="Td4-Qy-zUR"/>
+                                <include reference="msy-9d-tE1"/>
+                                <include reference="A53-7A-Mkh"/>
                                 <include reference="GsY-Fh-wqH"/>
                                 <include reference="Ix5-cW-hhA"/>
                                 <include reference="rKw-ny-h7D"/>
                                 <include reference="v50-WK-vvF"/>
+                                <include reference="4cK-p6-UGQ"/>
+                                <include reference="Td4-Qy-zUR"/>
                             </mask>
                         </variation>
                     </view>
@@ -85,12 +99,13 @@
                         <outlet property="RecordButton" destination="aS6-qT-XLS" id="FEo-Zp-J0Y"/>
                         <outlet property="RecordingInProgress" destination="KvT-vi-rgL" id="NOB-yX-RWs"/>
                         <outlet property="StopButton" destination="439-Au-UsL" id="ISR-Ho-iCZ"/>
+                        <outlet property="TaptoRecord" destination="M2J-Fq-M6F" id="V2X-gE-wy2"/>
                         <segue destination="X12-bm-9tj" kind="show" identifier="stopRecording" id="Jrw-a8-7GT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1174.5" y="364"/>
+            <point key="canvasLocation" x="1036.5" y="364"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cAt-I1-w8F">
@@ -180,16 +195,16 @@
                                 <exclude reference="f0B-F2-4ar"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Bho-wG-pUc"/>
-                                <exclude reference="dws-9r-opx"/>
-                                <exclude reference="0cV-Ru-y7x"/>
-                                <exclude reference="rID-bK-UTM"/>
+                                <exclude reference="jJh-SF-shJ"/>
                                 <exclude reference="7cJ-Dh-9CC"/>
                                 <exclude reference="cGR-0R-htv"/>
+                                <exclude reference="nMW-AC-gvd"/>
+                                <exclude reference="0cV-Ru-y7x"/>
+                                <exclude reference="rID-bK-UTM"/>
                                 <exclude reference="fvz-Lr-nHo"/>
                                 <exclude reference="xDl-ph-1RU"/>
-                                <exclude reference="nMW-AC-gvd"/>
-                                <exclude reference="jJh-SF-shJ"/>
+                                <exclude reference="Bho-wG-pUc"/>
+                                <exclude reference="dws-9r-opx"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -201,23 +216,23 @@
                                 <include reference="f0B-F2-4ar"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Bho-wG-pUc"/>
-                                <include reference="dws-9r-opx"/>
-                                <include reference="0cV-Ru-y7x"/>
-                                <include reference="rID-bK-UTM"/>
+                                <include reference="jJh-SF-shJ"/>
                                 <include reference="7cJ-Dh-9CC"/>
                                 <include reference="cGR-0R-htv"/>
+                                <include reference="nMW-AC-gvd"/>
+                                <include reference="0cV-Ru-y7x"/>
+                                <include reference="rID-bK-UTM"/>
                                 <include reference="fvz-Lr-nHo"/>
                                 <include reference="xDl-ph-1RU"/>
-                                <include reference="nMW-AC-gvd"/>
-                                <include reference="jJh-SF-shJ"/>
+                                <include reference="Bho-wG-pUc"/>
+                                <include reference="dws-9r-opx"/>
                             </mask>
                         </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LSo-rC-a3u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2004" y="364"/>
+            <point key="canvasLocation" x="1776" y="364"/>
         </scene>
     </scenes>
     <resources>
